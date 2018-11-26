@@ -11,7 +11,7 @@ namespace Module1
         public int Module1Class1Method1()
         {
             return 1;
+            
         }
-
     }
 }
