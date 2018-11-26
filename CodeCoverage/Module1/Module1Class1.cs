@@ -12,8 +12,12 @@ namespace Module1
         {
             int a = 1;
             int b = 0;
-            int c = a + b;
-            return a;
+            int c = 1;
+            if(a < b)
+            {
+            	c = 2;
+            }
+            return c;
         }
 
     }
