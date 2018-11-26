@@ -10,7 +10,10 @@ namespace Module1
     {
         public int Module1Class1Method1()
         {
-            return 1;
+            int a = 1;
+            int b = 0;
+            int c = a + b;
+            return a;
         }
 
     }
