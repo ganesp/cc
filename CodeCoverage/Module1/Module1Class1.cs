@@ -16,6 +16,13 @@ namespace Module1
             if(a < b)
             {
             	c = 2;
+                a = b;
+
+                if(b < c)
+                {
+                  b = c;
+                  c = a;
+                }
             }
             return c;
         }
