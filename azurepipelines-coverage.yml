@@ -1,0 +1,5 @@
+coverage:
+  status:
+    diff:
+      default:
+        target: 90%
