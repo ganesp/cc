@@ -13,7 +13,7 @@ $authHeader = ConvertTo-BasicAuthHeader $env:SYSTEM_ACCESSTOKEN
 $collectionId = $env:SYSTEM_COLLECTIONID
 $projectId = $env:SYSTEM_TEAMPROJECTID
 
-$uri =  "https://vstmr.codedev.ms/$collectionId$projectId/_apis/test/CodeCoverage/?buildId=$env:BUILD_BUILDID"
+$uri =  "https://vstmr.codedev.ms/$collectionId/$projectId/_apis/test/CodeCoverage/?buildId=$env:BUILD_BUILDID"
 
 Write-Host "Calling patch via " $uri
 
