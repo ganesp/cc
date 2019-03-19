@@ -1,3 +1,5 @@
+gci env:* | sort-object name
+
 function ConvertTo-BasicAuthHeader {
   param([string]$authtoken)
 
