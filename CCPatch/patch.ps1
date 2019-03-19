@@ -6,7 +6,7 @@ function ConvertTo-BasicAuthHeader {
   $ba = (":{0}" -f $authtoken)
   $ba = [System.Text.Encoding]::UTF8.GetBytes($ba)
   $ba = [System.Convert]::ToBase64String($ba)
-  $header = @{Authorization = ("Bearer {0}" -f $ba); ContentType = "application/json"}
+  $header = @{Authorization = ("Basic{0}" -f $ba); ContentType = "application/json"}
   return $header
 }
 
