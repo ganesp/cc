@@ -10,10 +10,10 @@ function ConvertTo-BasicAuthHeader {
 
 $branchRef = $env:BUILD_SOURCEBRANCH
 $authHeader = ConvertTo-BasicAuthHeader $env:SYSTEM_ACCESSTOKEN
-$teamdoundationCollectionUri = $env:SYSTEM_TEAMFOUNDATIONCOLLECTIONURI
+$collectionId = $env:SYSTEM_COLLECTIONID
 $projectId = $env:SYSTEM_TEAMPROJECTID
 
-$uri =  "$teamdoundationCollectionUri$projectId/_apis/test/CodeCoverage/?buildId=$env:BUILD_BUILDID"
+$uri =  "https://vstmr.codedev.ms/$collectionId$projectId/_apis/test/CodeCoverage/?buildId=$env:BUILD_BUILDID"
 
 Write-Host "Calling patch via " $uri
 
