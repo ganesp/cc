@@ -15,7 +15,7 @@ $authHeader = ConvertTo-BasicAuthHeader $env:SYSTEM_ACCESSTOKEN
 
 $projectId = $env:SYSTEM_TEAMPROJECTID
 
-$uri =  "$env:TCMADDRESS/$projectId/_apis/testresults/CodeCoverage/?buildId=$env:BUILD_BUILDID"
+$uri =  "$env:TCMADDRESS/$projectId/_apis/testresults/CodeCoverage/?buildId=$env:BUILD_BUILDID&api-version=5.0-preview.1"
 
 Write-Host "Calling patch via " $uri
 
