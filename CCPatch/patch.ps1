@@ -1,5 +1,3 @@
-gci env:* | sort-object name
-
 function ConvertTo-BasicAuthHeader {
   param([string]$authtoken)
 
@@ -12,10 +10,10 @@ function ConvertTo-BasicAuthHeader {
 
 $branchRef = $env:BUILD_SOURCEBRANCH
 $authHeader = ConvertTo-BasicAuthHeader $env:SYSTEM_ACCESSTOKEN
-$collectionId = $env:SYSTEM_COLLECTIONID
+
 $projectId = $env:SYSTEM_TEAMPROJECTID
 
-$uri =  "https://vstmr.codedev.ms/$collectionId/$projectId/_apis/testresults/CodeCoverage/?buildId=$env:BUILD_BUILDID"
+$uri =  "$env:TCMADDRESS/$projectId/_apis/testresults/CodeCoverage/?buildId=$env:BUILD_BUILDID"
 
 Write-Host "Calling patch via " $uri
 
