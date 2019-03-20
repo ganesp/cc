@@ -21,3 +21,4 @@ Write-Host "Calling patch via " $uri
 
 $patchResult = Invoke-RestMethod -Uri $uri -Headers $authHeader -Method Patch -ContentType "application/json"
 Write-Host $patchResult;
+Write-Host $patchResult["status"];
