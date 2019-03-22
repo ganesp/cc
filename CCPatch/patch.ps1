@@ -51,5 +51,3 @@ if($getRequest.status -ne 'completed') {
     Write-Host 'status is not completed, ' $getRequest.status
     exit 1;
 }
-
-$getRequest | ConvertTo-Json | Write-Host
