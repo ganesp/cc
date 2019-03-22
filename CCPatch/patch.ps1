@@ -13,7 +13,7 @@ $authHeader = ConvertTo-BasicAuthHeader $env:SYSTEM_ACCESSTOKEN
 
 $projectId = $env:SYSTEM_TEAMPROJECTID
 
-$uri = $env:TCMADDRESS + '/$projectId/_apis/testresults/CodeCoverage/?buildId=$env:BUILD_BUILDID&api-version=5.0-preview.1'
+$uri = $env:TCMADDRESS + '/' + $projectId '/_apis/testresults/CodeCoverage/?buildId=' + $env:BUILD_BUILDID + '&api-version=5.0-preview.1'
 
 Write-Host 'Calling patch via ' $uri
 
@@ -26,7 +26,7 @@ try
 catch
 {
     if($_.Exception.Response.StatusCode -ne 425) {
-        Write-Host 'Conflict response didnt match, ' $response
+        Write-Host 'Conflict response didnt match, ' + $response
         exit 1;
     }
 }
@@ -34,7 +34,7 @@ catch
 $patchResult = $patchRequest.Content | ConvertFrom-Json
 
 if($patchResult.status -ne 'pending') {
-    Write-Host 'status is not pending, ' $patchResult.status
+    Write-Host 'status is not pending, ' + $patchResult.status
     exit 1;
 }
 
@@ -48,6 +48,6 @@ do
 
 
 if($getRequest.status -ne 'completed') {
-    Write-Host 'status is not completed, ' $getRequest.status
+    Write-Host 'status is not completed, ' + $getRequest.status
     exit 1;
 }
