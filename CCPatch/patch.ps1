@@ -17,11 +17,11 @@ $uri = $env:TCMADDRESS + '/' + $projectId + '/_apis/testresults/CodeCoverage/?bu
 
 Write-Host 'Calling patch via ' $uri
 
-$patchRequest = Invoke-WebRequest -Uri $uri -Headers $authHeader -Method Patch -ContentType 'application/json'
+$patchRequest = Invoke-WebRequest -Uri $uri -Headers $authHeader -Method Patch -ContentType 'application/json' -UseBasicParsing
 
 try
 {
-    Invoke-WebRequest -Uri $uri -Headers $authHeader -Method Patch -ContentType 'application/json'
+    Invoke-WebRequest -Uri $uri -Headers $authHeader -Method Patch -ContentType 'application/json' -UseBasicParsing
 }
 catch
 {
@@ -43,7 +43,7 @@ $getRequest = ''
 do
 {
     Start-Sleep -s 1
-    $getRequest = Invoke-RestMethod -Uri $uri -Headers $authHeader -Method Get -ContentType 'application/json'
+    $getRequest = Invoke-RestMethod -Uri $uri -Headers $authHeader -Method Get -ContentType 'application/json' -UseBasicParsing
 } while ($getRequest.status -eq 'pending')
 
 
