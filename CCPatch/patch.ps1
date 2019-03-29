@@ -23,6 +23,18 @@ Write-Host 'Calling patch via ' $uri
 
 $patchRequest = Invoke-WebRequest -Uri $uri -Headers $authHeader -Method Patch -ContentType 'application/json' -UseBasicParsing
 
+try
+{
+    Invoke-WebRequest -Uri $uri -Headers $authHeader -Method Patch -ContentType 'application/json' -UseBasicParsing
+}
+catch
+{
+    if($_.Exception.Response.StatusCode -ne 425) {
+        Write-Host 'Conflict response didnt match, ' + $response
+        exit 1;
+    }
+}
+
 $patchResult = $patchRequest.Content | ConvertFrom-Json
 
 if($patchResult.status -ne 'pending') {
