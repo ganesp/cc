@@ -13,5 +13,9 @@ namespace Module1
             return 1;
         }
 
+        public int Module1Class1Method2()
+        {
+            return 2;
+        }
     }
 }
