@@ -57,8 +57,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Module1\Module1.csproj">
-      <Project>{4E0A8B8A-0A74-4195-A372-D6319AC10404}</Project>
+    <ProjectReference Include="..\Product1\Module1\Module1.csproj">
+      <Project>{4e0a8b8a-0a74-4195-a372-d6319ac10404}</Project>
       <Name>Module1</Name>
     </ProjectReference>
   </ItemGroup>
