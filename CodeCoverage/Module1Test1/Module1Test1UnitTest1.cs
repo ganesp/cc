@@ -11,7 +11,10 @@ namespace Module1Test1
         public void Module1Test1UnitTest1_TestMethod1()
         {
             var module1Class1 = new Module1Class1();
-            Assert.AreEqual(2, module1Class1.Module1Class1Method1());
+            Assert.AreEqual(1, module1Class1.Module1Class1Method1());
+            
+            var module1Class2 = new Module1Class1();
+            Assert.AreEqual(1, module1Class2.Module1Class1Method1());
         }
     }
 }
