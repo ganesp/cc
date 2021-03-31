@@ -29,7 +29,16 @@ steps:
     configuration: '$(buildConfiguration)'
 
 - task: VSTest@2
+  displayName: 'Test Assemblies'
   inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-    codeCoverageEnabled: True
+    testAssemblyVer2: |
+     **\*test*.dll
+     !**\obj\**
+    searchFolder: '$(Build.BinariesDirectory)'
+    runOnlyImpactedTests: true
+    runAllTestsAfterXBuilds: 10
+    runInParallel: true
+    codeCoverageEnabled: true
+    platform: '$(BuildPlatform)'
+    configuration: '$(BuildConfiguration)'
+    diagnosticsEnabled: true
