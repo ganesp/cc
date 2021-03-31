@@ -35,6 +35,4 @@ steps:
     runAllTestsAfterXBuilds: 10
     runInParallel: true
     codeCoverageEnabled: true
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
     diagnosticsEnabled: true
