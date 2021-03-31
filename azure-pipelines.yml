@@ -31,10 +31,6 @@ steps:
 - task: VSTest@2
   displayName: 'Test Assemblies'
   inputs:
-    testAssemblyVer2: |
-     **\*test*.dll
-     !**\obj\**
-    searchFolder: '$(Build.BinariesDirectory)'
     runOnlyImpactedTests: true
     runAllTestsAfterXBuilds: 10
     runInParallel: true
