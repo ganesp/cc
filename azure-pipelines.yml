@@ -33,6 +33,6 @@ steps:
   inputs:
     #runOnlyImpactedTests: true
     #runAllTestsAfterXBuilds: 10
-    runInParallel: true
+    #runInParallel: true
     codeCoverageEnabled: true
     diagnosticsEnabled: true
