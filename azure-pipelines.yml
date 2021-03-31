@@ -7,8 +7,8 @@ pr:
 - master
 - releases/*
 
-pool:
-  vmImage: 'windows-latest'
+pool: default
+  # vmImage: 'windows-latest'
 
 variables:
   solution: '**/*.sln'
